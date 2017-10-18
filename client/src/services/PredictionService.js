@@ -6,5 +6,14 @@ export default {
   },
   post (prediction) {
     return Api().post('predictions', prediction)
+  },
+  indexNFL () {
+    return Api().get('predictions/NFL')
+  },
+  indexNCAAF () {
+    return Api().get('predictions/NCAAF')
+  },
+  indexNBA () {
+    return Api().get('predictions/NBA')
   }
 }

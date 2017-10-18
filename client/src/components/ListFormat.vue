@@ -1,11 +1,11 @@
 <template>
-  <v-container class="mt-5">
+  <v-container >
     <v-layout>
       <v-flex>
-        <v-card v-for="(prediction, index) in predictions" :key="prediction.id" class="mb-2 text-xs-center">
+        <v-card v-for="(prediction, index) in this.predictions" :key="prediction.id" class="mb-2 text-xs-center">
           <v-card-text>
-            <h3>{{prediction.title}}</h3>
             <div>{{prediction.category}}</div>
+            <h3>{{prediction.title}}</h3>
             <br>
             <div v-if="!!prediction.category">{{prediction.description}}</div>
           </v-card-text>
@@ -18,17 +18,8 @@
 </template>
 
 <script>
-import PredictionService from '@/services/PredictionService'
 export default {
-  prop: ['category'],
-  data () {
-    return {
-      predictions: null
-    }
-  },
-  async mounted () {
-    this.predictions = (await PredictionService.index()).data
-  }
+  props: ['predictions']
 }
 </script>
 

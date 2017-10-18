@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Home from '@/components/Home'
 import List from '@/components/List'
 import Create from '@/components/CreatePrediction'
 
@@ -10,11 +10,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Home',
+      component: Home
     },
     {
-      path: '/list',
+      path: '/list/:category',
+      props: true,
       name: 'List',
       component: List
     },
@@ -23,5 +24,6 @@ export default new Router({
       name: 'Create',
       component: Create
     }
-  ]
+  ],
+  mode: 'history'
 })

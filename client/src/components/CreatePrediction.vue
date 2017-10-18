@@ -5,7 +5,7 @@
         <v-layout>
           <v-flex>
             <v-card-title>
-              <h3>Create A Prediction</h3>
+            <h3>Create A Prediction</h3>
             </v-card-title>
             <v-card-text>
             <v-text-field
@@ -54,7 +54,8 @@ export default {
       description: '',
       categories: [
         { text: 'NFL' },
-        { text: 'NCAAF' }
+        { text: 'NCAAF' },
+        { text: 'NBA' }
       ]
     }
   },
@@ -67,7 +68,7 @@ export default {
       }
       try {
         await PredictionService.post(prediction)
-        this.$router.push('/list')
+        this.$router.push('/list/all')
       } catch (error) {
         console.log('create works')
       }

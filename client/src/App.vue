@@ -29,7 +29,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only pb-1 pt-1">
-        <v-btn class="ml-1" fluid v-for="item in navItems" :key="item.title"
+        <v-btn flat class="ml-1" fluid v-for="item in navItems" :key="item.title"
         router 
         :to="item.link">
           <v-icon left>{{ item.icon }}</v-icon>
@@ -51,7 +51,10 @@
       return {
         drawer: false,
         navItems: [
-          { icon: 'code', title: 'list', link: '/list' },
+          { icon: 'looks_3', title: 'NBA', link: '/list/NBA' },
+          { icon: 'looks_two', title: 'NCAAF', link: '/list/NCAAF' },
+          { icon: 'looks_one', title: 'NFL', link: '/list/NFL' },
+          { icon: 'code', title: 'All', link: '/list/all' },
           { icon: 'add', title: 'create', link: '/create' }
         ]
       }
